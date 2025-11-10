@@ -1,3 +1,6 @@
-theme: jekyll-theme-minima
+# theme: jekyll-theme-minima
 title: JuliaPy's homepage
 description: Updates on Julia-Python interoperability
+plugins:
+  - jekyll-remote-theme
+remote_theme: jekyll/minima@c6e74bbfe7a0d0ae8c806cb38b012d01b25b1f7d # v2.5.2
