@@ -3,8 +3,6 @@ layout: post
 title: 'pyprint("Hello $world!")'
 ---
 
-# `pyprint("Hello $world!")`
-
 Just a quick post to (a) check I set this blog up correctly; and (b) introduce the
 [new JuliaPy website](https://juliapy.github.io).
 
