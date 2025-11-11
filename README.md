@@ -2,76 +2,47 @@ The [JuliaPy](https://github.com/JuliaPy) organisation on GitHub is the home for
 
 Within this, there are two ecosystems of packages, one centered around **PythonCall.jl** and the other around **PyCall.jl**. While PythonCall is newer and more actively maintained, both are popular and power many wrapper packages outside of this org.
 
-## The PythonCall ecosystem
+The core packages of the PythonCall ecosystem are:
 
-* **PythonCall.jl** ([repo](https://github.com/JuliaPy/PythonCall.jl)):
-  A Julia package that lets you call Python code. Installs any Python dependencies
-  automatically using CondaPkg.jl. Comes "batteries included" with support for numpy
+* **PythonCall.jl** ([repo](https://github.com/JuliaPy/PythonCall.jl)) itself, which
+  lets you call Python code. Comes "batteries included" with support for numpy
   arrays, tabular data, multimedia display and more.
 
-* **pyjuliacall** ([repo](https://github.com/JuliaPy/PythonCall.jl)):
-  A Python package that lets you call Julia code - the Python side of PythonCall.jl. In
-  fact this package is mostly implemented in Julia as part of PythonCall, they are two
-  sides of the same codebase. This makes interoperation more symmetric and predictable
-  from either side. Installs any Julia dependencies automatically using pyjuliapkg.
+* **pyjuliacall** ([repo](https://github.com/JuliaPy/PythonCall.jl)) is the Python side
+  of PythonCall.jl, letting you call into Julia from Python.
 
-* **CondaPkg.jl** ([repo](https://github.com/JuliaPy/CondaPkg.jl)):
-  A Conda package manager for Julia, like Pkg but for Conda. You declare your Julia
-  project's Conda/PyPI dependencies in a CondaPkg.toml file (anaologous to Project.toml)
-  and it automatically creates a Conda environment specific to your project with these in.
-  Used by default by PythonCall for package management.
+* **CondaPkg.jl** ([repo](https://github.com/JuliaPy/CondaPkg.jl)) is a Conda package
+  manager for Julia, like Pkg but for Conda. Used by PythonCall for automatic package
+  management.
 
-* **pyjuliapkg** ([repo](https://github.com/JuliaPy/pyjuliapkg)):
-  The Python analogue of CondaPkg.jl, namely a Python package which reads your Julia
-  dependencies from a juliapkg.json file and automatically installs Julia and any
-  required packages into a Julia project specific to your Python/Conda environment.
-  Used by default by pyjuliacall.
+* **pyjuliapkg** ([repo](https://github.com/JuliaPy/pyjuliapkg)) is the Python analogue
+  of CondaPkg.jl, used by pyjuliacall for automatic package installation.
 
-* **PythonPlot.jl** ([repo](https://github.com/JuliaPy/PythonPlot.jl)):
-  A Julia plotting package wrapping matplotlib. A port of PyPlot.jl to use PythonCall.jl.
+* Plus wrapper package
+  **PythonPlot.jl** ([repo](https://github.com/JuliaPy/PythonPlot.jl))
+  and many more [external packages...](https://juliahub.com/ui/Packages/General/PythonCall#dependents)
 
-* **MicroMamba.jl** ([repo](https://github.com/JuliaPy/MicroMamba.jl)):
-  Makes the micromamba implementation of Conda available. Mostly an implementation
-  detail of CondaPkg.jl.
+The core packages of the PyCall ecosystem are:
 
-* Plus many more [external packages...](https://juliahub.com/ui/Packages/General/PythonCall#dependents)
+* **PyCall.jl** ([repo](https://github.com/JuliaPy/PyCall.jl)) is another Julia package
+  that lets you call Python code. Older than PythonCall but still popular and maintained.
 
-## The PyCall ecosystem
+* **pyjulia** ([repo](https://github.com/JuliaPy/pyjulia)) is another Python package
+  that lets you call Julia code. Experimental and deprecated in favour of pyjuliacall.
 
-* **PyCall.jl** ([repo](https://github.com/JuliaPy/PyCall.jl)):
-  Another Julia package that lets you call Python code. Older than PythonCall but still
-  popular and maintained.
+* **Conda.jl** ([repo](https://github.com/JuliaPy/Conda.jl)) makes Conda available in
+  Julia. Used by PyCall.jl to automatically install Python and packages.
 
-* **pyjulia** ([repo](https://github.com/JuliaPy/pyjulia)):
-  Another Python package that lets you call Julia code. Experimental and deprecated in
-  favour of pyjuliacall.
+* Plus wrapper packages
+  **SymPy.jl** ([repo](https://github.com/JuliaPy/SymPy.jl)),
+  **PyPlot.jl** ([repo](https://github.com/JuliaPy/PyPlot.jl)),
+  **Pandas.jl** ([repo](https://github.com/JuliaPy/Pandas.jl)),
+  **Seaborn.jl** ([repo](https://github.com/JuliaPy/Seaborn.jl)),
+  **PyCallJLD.jl** ([repo](https://github.com/JuliaPy/PyCallJLD.jl)),
+  **PyInteract.jl** ([repo](https://github.com/JuliaPy/PyInteract.jl))
+  and many more [external packages...](https://juliahub.com/ui/Packages/General/PyCall#dependents)
 
-* **Conda.jl** ([repo](https://github.com/JuliaPy/Conda.jl)):
-  Makes Conda available and lets you install packages manually into a central Julia-wide
-  Conda environment. Used by PyCall.jl to automatically install Python and packages.
-
-* **SymPy.jl** ([repo](https://github.com/JuliaPy/SymPy.jl)):
-  A Julia wrapper of the Python SymPy library.
-
-* **PyPlot.jl** ([repo](https://github.com/JuliaPy/PyPlot.jl)):
-  A Julia plotting package wrapping matplotlib.
-
-* **Pandas.jl** ([repo](https://github.com/JuliaPy/Pandas.jl)):
-  A Julia wrapper of the Python Pandas library, making DataFrames available in Julia.
-
-* **Seaborn.jl** ([repo](https://github.com/JuliaPy/Seaborn.jl)):
-  A Julia plotting package wrapping Seaborn.
-
-* **PyCallJLD.jl** ([repo](https://github.com/JuliaPy/PyCallJLD.jl)):
-  An integration allowing Python objects to be saved using JLD.jl.
-
-* **PyInteract.jl** ([repo](https://github.com/JuliaPy/PyInteract.jl)):
-  Provides Julia support for IPython-based interactive widgets.
-
-* Plus many more [external packages...](https://juliahub.com/ui/Packages/General/PyCall#dependents)
-
-## Join the discussion!
-
+Feel free to **get in touch**:
 * You can create issues or discussions on any of our GitHub repos.
 * The [Julia Discourse forum](https://discourse.julialang.org/) is a good place to ask
   questions. Using the 'PythonCall' or 'PyCall' tags helps.
